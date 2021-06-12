@@ -5,11 +5,26 @@ import PropTypes from 'prop-types';
 
 export function Ranking({ data }) {
   const formattedData = useMemo(() => {
-    return data.map(item => ({
-      id: v4(),
-      name: item.name,
-      points: item.points,
-    }));
+    return data
+      .map(item => ({
+        id: v4(),
+        name: item.name,
+        points: item.points,
+      }))
+      .sort((a, b) => {
+        const pointsA = a.points;
+        const pointsB = b.points;
+
+        if (pointsA > pointsB) {
+          return -1;
+        }
+
+        if (pointsA < pointsB) {
+          return 1;
+        }
+
+        return 0;
+      });
   }, [data]);
 
   return (
