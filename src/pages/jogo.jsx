@@ -28,8 +28,8 @@ export default function Jogo() {
                   { name: 'Rodrigo Albino', points: 35 },
                   { name: 'Ramon Bezerra', points: 25 },
                   { name: 'Pedro Gomes', points: 24 },
-                  { name: 'José Campos', points: 23 },
-                  { name: 'Arlequina Coringa', points: 12 },
+                  { name: 'José Campos', points: 200 },
+                  { name: 'Arlequina Coringa', points: 36 },
                 ]}
               />
             </Box>

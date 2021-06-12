@@ -7,6 +7,7 @@ import {
   LinkOverlay,
   LinkBox,
 } from '@chakra-ui/react';
+import { Ranking } from '@components/Ranking';
 
 export default function Home() {
   return (
@@ -81,54 +82,54 @@ export default function Home() {
             marginTop={6}
             templateColumns={['repeat(1, 1fr)', 'repeat(3, 1fr)']}
           >
-            <LinkBox
-              as="article"
-              maxW="full"
-              background="white"
-              borderWidth="1px"
-              rounded="md"
-            >
-              <Box p="5">
+            <Box as="article" maxW="full" background="white" rounded="md">
+              <Box>
                 <Heading size="md" my="2">
-                  <LinkOverlay href="/">Jogo 1</LinkOverlay>
+                  Jogo 1
                 </Heading>
-                <Box as="a" color="teal.400" href="/" fontWeight="bold">
-                  Leia mais
-                </Box>
+                <Ranking
+                  data={[
+                    { name: 'Rodrigo Albino', points: 35 },
+                    { name: 'Ramon Bezerra', points: 25 },
+                    { name: 'Pedro Gomes', points: 24 },
+                    { name: 'José Campos', points: 200 },
+                    { name: 'Arlequina Coringa', points: 36 },
+                  ]}
+                />
               </Box>
-            </LinkBox>
-            <LinkBox
-              as="article"
-              maxW="full"
-              background="white"
-              borderWidth="1px"
-              rounded="md"
-            >
-              <Box p="5">
+            </Box>
+            <Box as="article" maxW="full" background="white" rounded="md">
+              <Box>
                 <Heading size="md" my="2">
-                  <LinkOverlay href="/">Jogo 2</LinkOverlay>
+                  Jogo 2
                 </Heading>
-                <Box as="a" color="teal.400" href="/" fontWeight="bold">
-                  Leia mais
-                </Box>
+                <Ranking
+                  data={[
+                    { name: 'Rodrigo Albino', points: 35 },
+                    { name: 'Ramon Bezerra', points: 25 },
+                    { name: 'Pedro Gomes', points: 24 },
+                    { name: 'José Campos', points: 200 },
+                    { name: 'Arlequina Coringa', points: 36 },
+                  ]}
+                />
               </Box>
-            </LinkBox>
-            <LinkBox
-              as="article"
-              maxW="full"
-              background="white"
-              borderWidth="1px"
-              rounded="md"
-            >
-              <Box p="5">
+            </Box>
+            <Box as="article" maxW="full" background="white" rounded="md">
+              <Box>
                 <Heading size="md" my="2">
-                  <LinkOverlay href="/">Jogo 3</LinkOverlay>
+                  Jogo 3
                 </Heading>
-                <Box as="a" color="teal.400" href="/" fontWeight="bold">
-                  Leia mais
-                </Box>
+                <Ranking
+                  data={[
+                    { name: 'Rodrigo Albino', points: 35 },
+                    { name: 'Ramon Bezerra', points: 25 },
+                    { name: 'Pedro Gomes', points: 24 },
+                    { name: 'José Campos', points: 200 },
+                    { name: 'Arlequina Coringa', points: 36 },
+                  ]}
+                />
               </Box>
-            </LinkBox>
+            </Box>
           </Grid>
         </Box>
       </Container>
