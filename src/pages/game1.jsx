@@ -17,21 +17,12 @@ export default function Jogo() {
               <Heading as="h2" size="lg">
                 Jogo 1
               </Heading>
-              <Box background="green.200" mt={7} height="md"></Box>
             </Box>
             <Box>
               <Heading as="h2" size="lg">
                 Ranking
               </Heading>
-              <Ranking
-                data={[
-                  { name: 'Rodrigo Albino', points: 35 },
-                  { name: 'Ramon Bezerra', points: 25 },
-                  { name: 'Pedro Gomes', points: 24 },
-                  { name: 'José Campos', points: 200 },
-                  { name: 'Arlequina Coringa', points: 36 },
-                ]}
-              />
+              <Ranking gameName="Game1" />
             </Box>
           </Grid>
         </Box>
