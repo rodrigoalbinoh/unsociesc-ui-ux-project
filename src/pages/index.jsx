@@ -64,7 +64,9 @@ export default function Home() {
             >
               <Box p="5">
                 <Heading size="md" my="2">
-                  <LinkOverlay href="/">Jogo 3</LinkOverlay>
+                  <LinkOverlay href="/">
+                    <a>Jogo 3</a>
+                  </LinkOverlay>
                 </Heading>
                 <Box as="a" color="teal.400" href="/" fontWeight="bold">
                   Leia mais
