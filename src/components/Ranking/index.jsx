@@ -1,10 +1,12 @@
-import { Table, Thead, Tr, Th, Tbody, Td } from '@chakra-ui/react';
+import { Table, Thead, Tr, Th, Tbody, Td, useToast } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { useQuery } from 'react-query';
 import { api } from '@services/api';
+import { useEffect } from 'react';
 
 export function Ranking({ gameName }) {
-  const { data } = useQuery(
+  const toast = useToast();
+  const { data, error, isError } = useQuery(
     ['gameRanking', gameName],
     async () => {
       const response = await api.get(`${gameName}`);
@@ -26,6 +28,20 @@ export function Ranking({ gameName }) {
       staleTime: 1000 * 60 * 5, // 5 minutes
     },
   );
+
+  useEffect(() => {
+    if (isError) {
+      toast({
+        title: 'Erro ao carregar o ranking',
+        description:
+          'Parece que houve um problema ao carregar o ranking, agora você pode se considerar em primeiro lugar!',
+        status: 'error',
+        isClosable: true,
+        position: 'top-right',
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isError]);
 
   return (
     <Table size="md" mt={7} maxHeight="md" border="1px" borderColor="gray.200">
