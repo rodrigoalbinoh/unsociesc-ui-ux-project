@@ -21,17 +21,10 @@ export function Header({ isSingle }) {
         <Flex align="center">
           {isSingle && (
             <NextLink href="/">
-              <a>
-                <Box
-                  fontWeight="semibold"
-                  as="a"
-                  lineHeight="tight"
-                  isTruncated
-                >
-                  <ArrowBackIcon />
-                  Voltar
-                </Box>
-              </a>
+              <Box fontWeight="semibold" as="a" lineHeight="tight" isTruncated>
+                <ArrowBackIcon />
+                Voltar
+              </Box>
             </NextLink>
           )}
         </Flex>
