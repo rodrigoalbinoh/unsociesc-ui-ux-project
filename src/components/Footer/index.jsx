@@ -14,12 +14,11 @@ export function Footer() {
         as={Stack}
         maxW={'6xl'}
         py={4}
-        direction={{ base: 'column', md: 'row' }}
         spacing={4}
-        justify={{ base: 'center', md: 'space-between' }}
-        align={{ base: 'center', md: 'center' }}
+        justify="center"
+        align="center"
       >
-        <Text color="whiteAlpha.900">
+        <Text color="whiteAlpha.900" textAlign="center">
           © {currentYear} A3 Jogos. Todos os direitos reservados.
         </Text>
       </Container>
