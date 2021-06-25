@@ -9,7 +9,7 @@ export default function Home() {
       <Header />
       <Container maxW="7xl" paddingTop="6">
         <Box>
-          <Heading as="h2" size="lg">
+          <Heading color="white" as="h2" size="lg">
             Jogos
           </Heading>
           <Grid
@@ -23,7 +23,7 @@ export default function Home() {
           </Grid>
         </Box>
         <Box mt="9">
-          <Heading as="h2" size="lg">
+          <Heading color="white" as="h2" size="lg">
             Ranking dos Jogos
           </Heading>
           <Grid
