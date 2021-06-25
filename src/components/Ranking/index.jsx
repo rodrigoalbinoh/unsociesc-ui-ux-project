@@ -52,6 +52,8 @@ export function Ranking({ title, gameCode }) {
     },
   );
 
+  console.log({ data });
+
   return (
     <Box py={6} maxW="full" background="gray.700" rounded="xl">
       <Box>
@@ -66,10 +68,18 @@ export function Ranking({ title, gameCode }) {
             <Spinner color="whiteAlpha.900" size="xl" />
           </Center>
         ) : (
-          <Table size="md" mt={7} maxHeight="md" color="whiteAlpha.900">
+          <Table
+            size="md"
+            mt={7}
+            maxHeight="md"
+            colorScheme="whiteAlpha"
+            color="whiteAlpha.900"
+          >
             <Thead>
               <Tr>
-                <Th color="whiteAlpha.900">#</Th>
+                <Th textAlign="center" color="whiteAlpha.900">
+                  #
+                </Th>
                 <Th color="whiteAlpha.900">Usuário</Th>
                 <Th color="whiteAlpha.900">Pontuação</Th>
               </Tr>
