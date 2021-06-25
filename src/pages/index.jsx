@@ -1,9 +1,8 @@
 import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';
-import { Box, Container, Grid, Heading, Flex } from '@chakra-ui/react';
+import { Box, Container, Grid, Heading } from '@chakra-ui/react';
 import { Ranking } from '@components/Ranking';
 import { GameCard } from '@components/GameCard';
-import { FaCrown } from 'react-icons/fa';
 
 export default function Home() {
   return (
@@ -33,54 +32,9 @@ export default function Home() {
             marginTop={6}
             templateColumns={['repeat(1, 1fr)', 'repeat(3, 1fr)']}
           >
-            <Box py={6} maxW="full" background="gray.700" rounded="xl">
-              <Box>
-                <Flex mx={6} justifyContent="space-between" alignItems="center">
-                  <Heading
-                    size="lg"
-                    color="whiteAlpha.900"
-                    textAlign="center"
-                    my={2}
-                  >
-                    Jogo 1
-                  </Heading>
-                  <FaCrown size={36} color="#FFD700" />
-                </Flex>
-                <Ranking gameName="Game1" />
-              </Box>
-            </Box>
-            <Box py={6} maxW="full" background="gray.700" rounded="xl">
-              <Box>
-                <Flex mx={6} justifyContent="space-between" alignItems="center">
-                  <Heading
-                    size="lg"
-                    color="whiteAlpha.900"
-                    textAlign="center"
-                    my={2}
-                  >
-                    Jogo 2
-                  </Heading>
-                  <FaCrown size={36} color="#FFD700" />
-                </Flex>
-                <Ranking gameName="Game2" />
-              </Box>
-            </Box>
-            <Box py={6} maxW="full" background="gray.700" rounded="xl">
-              <Box>
-                <Flex mx={6} justifyContent="space-between" alignItems="center">
-                  <Heading
-                    size="lg"
-                    color="whiteAlpha.900"
-                    textAlign="center"
-                    my={2}
-                  >
-                    Jogo 3
-                  </Heading>
-                  <FaCrown size={36} color="#FFD700" />
-                </Flex>
-                <Ranking gameName="Game3" />
-              </Box>
-            </Box>
+            <Ranking title="Jogo 1" gameCode="Game1" />
+            <Ranking title="Jogo 2" gameCode="Game2" />
+            <Ranking title="Jogo 3" gameCode="Game3" />
           </Grid>
         </Box>
       </Container>
