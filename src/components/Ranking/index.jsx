@@ -1,4 +1,13 @@
-import { Table, Thead, Tr, Th, Tbody, Td, useToast } from '@chakra-ui/react';
+import {
+  Table,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  Td,
+  useToast,
+  Avatar,
+} from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { useQuery } from 'react-query';
 import { api } from '@services/api';
@@ -39,12 +48,12 @@ export function Ranking({ gameName }) {
   );
 
   return (
-    <Table size="md" mt={7} maxHeight="md" border="1px" borderColor="gray.200">
+    <Table size="md" mt={7} maxHeight="md" color="whiteAlpha.900">
       <Thead>
         <Tr>
-          <Th>#</Th>
-          <Th>Usuário</Th>
-          <Th>Pontuação</Th>
+          <Th color="whiteAlpha.900">#</Th>
+          <Th color="whiteAlpha.900">Usuário</Th>
+          <Th color="whiteAlpha.900">Pontuação</Th>
         </Tr>
       </Thead>
       <Tbody>

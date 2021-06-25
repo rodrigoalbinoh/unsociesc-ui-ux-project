@@ -5,12 +5,7 @@ import { NextSeo } from 'next-seo';
 
 export function Header({ isSingle }) {
   return (
-    <Container
-      as="header"
-      background="white"
-      maxW="full"
-      borderBottom="1px solid #3333"
-    >
+    <Container as="header" maxW="full" borderBottom="1px solid #3333">
       <NextSeo title="A3 Jogos" />
       <Grid
         maxW="7xl"
@@ -21,7 +16,13 @@ export function Header({ isSingle }) {
         <Flex align="center">
           {isSingle && (
             <NextLink href="/">
-              <Box fontWeight="semibold" as="a" lineHeight="tight" isTruncated>
+              <Box
+                color="whiteAlpha.900"
+                as="a"
+                fontWeight="semibold"
+                lineHeight="tight"
+                isTruncated
+              >
                 <ArrowBackIcon />
                 Voltar
               </Box>
@@ -34,6 +35,7 @@ export function Header({ isSingle }) {
               <Box
                 mt="1"
                 fontWeight="semibold"
+                color="whiteAlpha.900"
                 as="h1"
                 fontSize="2xl"
                 lineHeight="tight"
