@@ -3,23 +3,19 @@ import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';
 import { Box, Container, Grid, Heading } from '@chakra-ui/react';
 import { Ranking } from '@components/Ranking';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function Jogo() {
-  const [unityInstance, setUnityInstance] = useState(undefined);
-  const windowObject = typeof window !== 'undefined' && window;
-
   useEffect(() => {
-    setUnityInstance(
-      windowObject?.UnityLoader?.instantiate(
+    // Trick to load UnityLoader after page rendered and have access to window object
+    setTimeout(() => {
+      window?.UnityLoader?.instantiate(
         'game',
         'games/Game1/Build/BuildJogo.json',
-        { onprogress: windowObject?.UnityProgress },
-      ),
-    );
-  }, [windowObject.UnityLoader, windowObject.UnityProgress]);
-
-  console.log({ windowObject, unityInstance });
+        { onprogress: window?.UnityProgress },
+      );
+    }, 5000);
+  }, []);
 
   return (
     <Box background="gray.800" minHeight="100vh">

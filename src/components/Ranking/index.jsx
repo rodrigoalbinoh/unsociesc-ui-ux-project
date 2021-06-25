@@ -65,8 +65,6 @@ export function Ranking({ title, gameCode }) {
     },
   );
 
-  console.log({ data });
-
   return (
     <Box py={6} maxW="full" background="gray.700" rounded="xl">
       <Box>
