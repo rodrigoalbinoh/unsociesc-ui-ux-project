@@ -6,18 +6,21 @@ import {
   Tbody,
   Td,
   useToast,
-  Avatar,
+  Box,
+  Heading,
+  Flex,
 } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { useQuery } from 'react-query';
 import { api } from '@services/api';
+import { FaCrown } from 'react-icons/fa';
 
-export function Ranking({ gameName }) {
+export function Ranking({ title, gameCode }) {
   const toast = useToast();
   const { data } = useQuery(
-    ['gameRanking', gameName],
+    ['gameRanking', gameCode],
     async () => {
-      const response = await api.get(`${gameName}`);
+      const response = await api.get(`${gameCode}`);
 
       if (response.data) {
         const items = Object.entries(response.data);
@@ -48,31 +51,42 @@ export function Ranking({ gameName }) {
   );
 
   return (
-    <Table size="md" mt={7} maxHeight="md" color="whiteAlpha.900">
-      <Thead>
-        <Tr>
-          <Th color="whiteAlpha.900">#</Th>
-          <Th color="whiteAlpha.900">Usuário</Th>
-          <Th color="whiteAlpha.900">Pontuação</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {data?.map((item, index) => (
-          <Tr key={item.id}>
-            <Td textAlign="center">#{index + 1}</Td>
-            <Td>{item.name}</Td>
-            <Td>{`${item.score} ${item.scoreText}`}</Td>
-          </Tr>
-        ))}
-      </Tbody>
-    </Table>
+    <Box py={6} maxW="full" background="gray.700" rounded="xl">
+      <Box>
+        <Flex mx={6} justifyContent="space-between" alignItems="center">
+          <Heading size="lg" color="whiteAlpha.900" textAlign="center" my={2}>
+            {title}
+          </Heading>
+          <FaCrown size={36} color="#FFD700" />
+        </Flex>
+        <Table size="md" mt={7} maxHeight="md" color="whiteAlpha.900">
+          <Thead>
+            <Tr>
+              <Th color="whiteAlpha.900">#</Th>
+              <Th color="whiteAlpha.900">Usuário</Th>
+              <Th color="whiteAlpha.900">Pontuação</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {data?.map((item, index) => (
+              <Tr key={item.id}>
+                <Td textAlign="center">#{index + 1}</Td>
+                <Td>{item.name}</Td>
+                <Td>{`${item.score} ${item.scoreText}`}</Td>
+              </Tr>
+            ))}
+          </Tbody>
+        </Table>
+      </Box>
+    </Box>
   );
 }
 
 Ranking.defaultProps = {
-  data: [],
+  title: 'Ranking',
 };
 
 Ranking.propTypes = {
-  data: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
+  gameCode: PropTypes.string.isRequired,
 };
