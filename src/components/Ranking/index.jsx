@@ -11,11 +11,12 @@ import {
   Flex,
   Center,
   Spinner,
+  Text,
 } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { useQuery } from 'react-query';
 import { api } from '@services/api';
-import { FaCrown } from 'react-icons/fa';
+import { FaCrown, FaBatteryEmpty } from 'react-icons/fa';
 
 export function Ranking({ title, gameCode }) {
   const toast = useToast();
@@ -67,6 +68,18 @@ export function Ranking({ title, gameCode }) {
           <Center height="lg">
             <Spinner color="whiteAlpha.900" size="xl" />
           </Center>
+        ) : !data ? (
+          <Flex
+            height="lg"
+            direction="column"
+            align="center"
+            justifyContent="center"
+          >
+            <FaBatteryEmpty color="#FFFFFF" size={64} />
+            <Text fontSize="lg" color="whiteAlpha.900" textAlign="center">
+              Sem ranking
+            </Text>
+          </Flex>
         ) : (
           <Table
             size="md"
@@ -85,7 +98,7 @@ export function Ranking({ title, gameCode }) {
               </Tr>
             </Thead>
             <Tbody>
-              {data?.map((item, index) => (
+              {data.map((item, index) => (
                 <Tr key={item.id}>
                   <Td textAlign="center">#{index + 1}</Td>
                   <Td>{item.name}</Td>
