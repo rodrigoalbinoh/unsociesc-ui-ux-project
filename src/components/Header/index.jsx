@@ -10,7 +10,7 @@ export function Header({ isSingle }) {
       <Grid
         maxW="7xl"
         p={3}
-        templateColumns={['repeat(1, 1fr)', '1fr 1fr 1fr']}
+        templateColumns={['repeat(3, 1fr)', '1fr 1fr 1fr']}
         marginX="auto"
       >
         <Flex align="center">
@@ -23,7 +23,7 @@ export function Header({ isSingle }) {
                   lineHeight="tight"
                   isTruncated
                 >
-                  <ArrowBackIcon />
+                  <ArrowBackIcon mr={2} />
                   Voltar
                 </Box>
               </a>
