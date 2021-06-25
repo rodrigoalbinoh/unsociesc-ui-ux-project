@@ -1,17 +1,11 @@
 import { Header } from '@components/Header';
-import {
-  Box,
-  Container,
-  Grid,
-  Heading,
-  LinkOverlay,
-  LinkBox,
-} from '@chakra-ui/react';
+import { Box, Container, Grid, Heading } from '@chakra-ui/react';
 import { Ranking } from '@components/Ranking';
+import { GameCard } from '@components/GameCard';
 
 export default function Home() {
   return (
-    <>
+    <Box background="gray.800" minHeight="100vh">
       <Header />
       <Container maxW="7xl" paddingTop="6">
         <Box>
@@ -23,56 +17,9 @@ export default function Home() {
             marginTop={6}
             templateColumns={['repeat(1, 1fr)', 'repeat(3, 1fr)']}
           >
-            <LinkBox
-              as="article"
-              maxW="full"
-              background="white"
-              borderWidth="1px"
-              rounded="md"
-            >
-              <Box p="5">
-                <Heading size="md" my="2">
-                  <LinkOverlay href="/">Jogo 1</LinkOverlay>
-                </Heading>
-                <Box as="a" color="teal.400" href="/" fontWeight="bold">
-                  Leia mais
-                </Box>
-              </Box>
-            </LinkBox>
-            <LinkBox
-              as="article"
-              maxW="full"
-              background="white"
-              borderWidth="1px"
-              rounded="md"
-            >
-              <Box p="5">
-                <Heading size="md" my="2">
-                  <LinkOverlay href="/">Jogo 2</LinkOverlay>
-                </Heading>
-                <Box as="a" color="teal.400" href="/" fontWeight="bold">
-                  Leia mais
-                </Box>
-              </Box>
-            </LinkBox>
-            <LinkBox
-              as="article"
-              maxW="full"
-              background="white"
-              borderWidth="1px"
-              rounded="md"
-            >
-              <Box p="5">
-                <Heading size="md" my="2">
-                  <LinkOverlay href="/">
-                    <a>Jogo 3</a>
-                  </LinkOverlay>
-                </Heading>
-                <Box as="a" color="teal.400" href="/" fontWeight="bold">
-                  Leia mais
-                </Box>
-              </Box>
-            </LinkBox>
+            <GameCard title="Jogo 1" to="/game1" />
+            <GameCard title="Jogo 2" to="/game2" />
+            <GameCard title="Jogo 3" to="/game3" />
           </Grid>
         </Box>
         <Box mt="9">
@@ -84,57 +31,33 @@ export default function Home() {
             marginTop={6}
             templateColumns={['repeat(1, 1fr)', 'repeat(3, 1fr)']}
           >
-            <Box as="article" maxW="full" background="white" rounded="md">
+            <Box p={6} as="article" maxW="full" background="white" rounded="md">
               <Box>
                 <Heading size="md" my="2">
                   Jogo 1
                 </Heading>
-                <Ranking
-                  data={[
-                    { name: 'Rodrigo Albino', points: 35 },
-                    { name: 'Ramon Bezerra', points: 25 },
-                    { name: 'Pedro Gomes', points: 24 },
-                    { name: 'José Campos', points: 200 },
-                    { name: 'Arlequina Coringa', points: 36 },
-                  ]}
-                />
+                <Ranking gameName="Game1" />
               </Box>
             </Box>
-            <Box as="article" maxW="full" background="white" rounded="md">
+            <Box p={6} as="article" maxW="full" background="white" rounded="md">
               <Box>
                 <Heading size="md" my="2">
                   Jogo 2
                 </Heading>
-                <Ranking
-                  data={[
-                    { name: 'Rodrigo Albino', points: 35 },
-                    { name: 'Ramon Bezerra', points: 25 },
-                    { name: 'Pedro Gomes', points: 24 },
-                    { name: 'José Campos', points: 200 },
-                    { name: 'Arlequina Coringa', points: 36 },
-                  ]}
-                />
+                <Ranking gameName="Game2" />
               </Box>
             </Box>
-            <Box as="article" maxW="full" background="white" rounded="md">
+            <Box p={6} as="article" maxW="full" background="white" rounded="md">
               <Box>
                 <Heading size="md" my="2">
                   Jogo 3
                 </Heading>
-                <Ranking
-                  data={[
-                    { name: 'Rodrigo Albino', points: 35 },
-                    { name: 'Ramon Bezerra', points: 25 },
-                    { name: 'Pedro Gomes', points: 24 },
-                    { name: 'José Campos', points: 200 },
-                    { name: 'Arlequina Coringa', points: 36 },
-                  ]}
-                />
+                <Ranking gameName="Game3" />
               </Box>
             </Box>
           </Grid>
         </Box>
       </Container>
-    </>
+    </Box>
   );
 }

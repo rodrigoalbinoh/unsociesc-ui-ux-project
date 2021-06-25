@@ -9,15 +9,13 @@ export default function Jogo() {
   const windowObject = typeof window !== 'undefined' && window;
 
   useEffect(() => {
-    if (windowObject?.UnityLoader && windowObject?.UnityProgress) {
-      setUnityInstance(
-        windowObject.UnityLoader.instantiate(
-          'game',
-          'games/Game1/Build/BuildJogo.json',
-          { onprogress: windowObject.UnityProgress },
-        ),
-      );
-    }
+    setUnityInstance(
+      windowObject?.UnityLoader?.instantiate(
+        'game',
+        'games/Game1/Build/BuildJogo.json',
+        { onprogress: windowObject?.UnityProgress },
+      ),
+    );
   }, [windowObject.UnityLoader, windowObject.UnityProgress]);
 
   console.log({ windowObject, unityInstance });
