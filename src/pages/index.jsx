@@ -16,7 +16,12 @@ export default function Home() {
           <Grid
             gap={6}
             marginTop={6}
-            templateColumns={['repeat(1, 1fr)', 'repeat(3, 1fr)']}
+            templateColumns={[
+              'repeat(1, 1fr)',
+              'repeat(2, 1fr)',
+              'repeat(2, 1fr)',
+              'repeat(3, 1fr)',
+            ]}
           >
             <GameCard title="Jogo 1" to="/game1" />
             <GameCard title="Jogo 2" to="/game2" />
@@ -30,7 +35,12 @@ export default function Home() {
           <Grid
             gap={6}
             marginTop={6}
-            templateColumns={['repeat(1, 1fr)', 'repeat(3, 1fr)']}
+            templateColumns={[
+              'repeat(1, 1fr)',
+              'repeat(2, 1fr)',
+              'repeat(2, 1fr)',
+              'repeat(3, 1fr)',
+            ]}
           >
             <Ranking title="Jogo 1" gameCode="Game1" />
             <Ranking title="Jogo 2" gameCode="Game2" />

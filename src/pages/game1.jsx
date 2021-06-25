@@ -35,7 +35,12 @@ export default function Jogo() {
           <Grid
             gap={6}
             marginTop={6}
-            templateColumns={['repeat(1, 1fr)', '2fr 1fr']}
+            templateColumns={[
+              'repeat(1, 1fr)',
+              'repeat(1, 1fr)',
+              'repeat(1, 1fr)',
+              '2fr 1fr',
+            ]}
           >
             <Box pt={6}>
               <Heading as="h2" size="lg" color="whiteAlpha.900">
