@@ -27,15 +27,27 @@ export function Ranking({ title, gameCode }) {
 
       if (response.data) {
         const items = Object.entries(response.data);
-        return items.map(item => {
-          const score = parseInt(item[1].userScore);
-          return {
-            id: item[0],
-            name: item[1].userName,
-            score,
-            scoreText: score === 1 ? 'ponto' : 'pontos',
-          };
-        });
+        return items
+          .map(item => {
+            const score = parseInt(item[1].userScore);
+            return {
+              id: item[0],
+              name: item[1].userName,
+              score,
+              scoreText: score === 1 ? 'ponto' : 'pontos',
+            };
+          })
+          .sort((a, b) => {
+            if (a.score > b.score) {
+              return -1;
+            }
+
+            if (a.score < b.score) {
+              return 1;
+            }
+
+            return 0;
+          });
       }
     },
     {
