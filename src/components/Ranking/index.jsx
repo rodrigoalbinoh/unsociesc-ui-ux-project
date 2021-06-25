@@ -9,6 +9,8 @@ import {
   Box,
   Heading,
   Flex,
+  Center,
+  Spinner,
 } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { useQuery } from 'react-query';
@@ -17,7 +19,7 @@ import { FaCrown } from 'react-icons/fa';
 
 export function Ranking({ title, gameCode }) {
   const toast = useToast();
-  const { data } = useQuery(
+  const { data, isLoading, isFetching } = useQuery(
     ['gameRanking', gameCode],
     async () => {
       const response = await api.get(`${gameCode}`);
@@ -59,24 +61,30 @@ export function Ranking({ title, gameCode }) {
           </Heading>
           <FaCrown size={36} color="#FFD700" />
         </Flex>
-        <Table size="md" mt={7} maxHeight="md" color="whiteAlpha.900">
-          <Thead>
-            <Tr>
-              <Th color="whiteAlpha.900">#</Th>
-              <Th color="whiteAlpha.900">Usuário</Th>
-              <Th color="whiteAlpha.900">Pontuação</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {data?.map((item, index) => (
-              <Tr key={item.id}>
-                <Td textAlign="center">#{index + 1}</Td>
-                <Td>{item.name}</Td>
-                <Td>{`${item.score} ${item.scoreText}`}</Td>
+        {isLoading || isFetching ? (
+          <Center height="lg">
+            <Spinner color="whiteAlpha.900" size="xl" />
+          </Center>
+        ) : (
+          <Table size="md" mt={7} maxHeight="md" color="whiteAlpha.900">
+            <Thead>
+              <Tr>
+                <Th color="whiteAlpha.900">#</Th>
+                <Th color="whiteAlpha.900">Usuário</Th>
+                <Th color="whiteAlpha.900">Pontuação</Th>
               </Tr>
-            ))}
-          </Tbody>
-        </Table>
+            </Thead>
+            <Tbody>
+              {data?.map((item, index) => (
+                <Tr key={item.id}>
+                  <Td textAlign="center">#{index + 1}</Td>
+                  <Td>{item.name}</Td>
+                  <Td>{`${item.score} ${item.scoreText}`}</Td>
+                </Tr>
+              ))}
+            </Tbody>
+          </Table>
+        )}
       </Box>
     </Box>
   );
