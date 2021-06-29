@@ -5,11 +5,13 @@ import {
   LinkOverlay,
   LinkBox,
   Center,
+  Image,
 } from '@chakra-ui/react';
+// import Image from 'next/image';
 import { FaGamepad } from 'react-icons/fa';
 import Router from 'next/router';
 
-export function GameCard({ title, to }) {
+export function GameCard({ title, to, image }) {
   return (
     <LinkBox
       as="article"
@@ -18,9 +20,13 @@ export function GameCard({ title, to }) {
       rounded="3xl"
       background="gray.700"
     >
-      <Center rounded="3xl" height="72" background="blackAlpha.700">
-        <FaGamepad size={102} color="#FFF" />
-      </Center>
+      {image ? (
+        <Image src={image} rounded="3xl" />
+      ) : (
+        <Center rounded="3xl" height="72" background="blackAlpha.700">
+          <FaGamepad size={102} color="#FFF" />
+        </Center>
+      )}
       <Box py={4} px={6}>
         <Heading color="white" size="lg" my={2}>
           <LinkOverlay href={to}>{title}</LinkOverlay>
