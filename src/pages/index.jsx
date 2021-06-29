@@ -28,7 +28,11 @@ export default function Home() {
               to="/fabble-bird"
               image="/fabble-bird.png"
             />
-            <GameCard title="Jogo 2" to="/game2" />
+            <GameCard
+              title="Really Angry Bird"
+              to="/really-angry-bird"
+              image="/really-angry-bird.png"
+            />
             <GameCard title="Jogo 3" to="/game3" />
           </Grid>
         </Box>
@@ -47,7 +51,7 @@ export default function Home() {
             ]}
           >
             <Ranking title="Fabble Bird" gameCode="Game1" />
-            <Ranking title="Jogo 2" gameCode="Game2" />
+            <Ranking title="Really Angry Bird" gameCode="Game2" />
             <Ranking title="Jogo 3" gameCode="Game3" />
           </Grid>
         </Box>

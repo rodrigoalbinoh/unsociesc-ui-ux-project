@@ -21,7 +21,13 @@ export function GameCard({ title, to, image }) {
       background="gray.700"
     >
       {image ? (
-        <Image src={image} rounded="3xl" />
+        <Image
+          src={image}
+          rounded="3xl"
+          height="72"
+          width="100%"
+          objectFit="cover"
+        />
       ) : (
         <Center rounded="3xl" height="72" background="blackAlpha.700">
           <FaGamepad size={102} color="#FFF" />

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "640652109044",
+    "project_id": "ui-ux-gameproject-e70cc",
+    "storage_bucket": "ui-ux-gameproject-e70cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640652109044:android:0fec7c12af311b06662aa1",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.FirebaseAuthTutorialStarterProject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640652109044-9efgvjhn1ieqg0du9vhf1f6d1mfvvm03.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOmh86KP9XRtL2QpwIhrD0_uO73LOhTUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640652109044-9efgvjhn1ieqg0du9vhf1f6d1mfvvm03.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
