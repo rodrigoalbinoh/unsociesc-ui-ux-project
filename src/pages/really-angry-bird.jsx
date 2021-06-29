@@ -6,17 +6,16 @@ import { Ranking } from '@components/Ranking';
 import { useEffect } from 'react';
 import { firebaseConfig } from '@config/firebaseConfig';
 
-export default function FabbleBird() {
+export default function ReallyAngryBird() {
   useEffect(() => {
     // Trick to load UnityLoader after page rendered and have access to window object
     setTimeout(() => {
       window.unityInstance = window?.UnityLoader?.instantiate(
         'game',
-        'games/FabbleBird/Build/FabbleBird.json',
+        'games/ReallyAngryBird/Build/ReallyAngryBird.json',
         { onprogress: window?.UnityProgress },
       );
 
-      // Initialize Firebase
       window.firebase.initializeApp(firebaseConfig);
     }, 5000);
   }, []);
@@ -26,11 +25,14 @@ export default function FabbleBird() {
       <Head>
         <link
           rel="shortcut icon"
-          href="games/FabbleBird/TemplateData/favicon.ico"
+          href="games/ReallyAngryBird/TemplateData/favicon.ico"
         />
-        <link rel="stylesheet" href="games/FabbleBird/TemplateData/style.css" />
-        <script src="games/FabbleBird/TemplateData/UnityProgress.js"></script>
-        <script src="games/FabbleBird/Build/UnityLoader.js"></script>
+        <link
+          rel="stylesheet"
+          href="games/ReallyAngryBird/TemplateData/style.css"
+        />
+        <script src="games/ReallyAngryBird/TemplateData/UnityProgress.js"></script>
+        <script src="games/ReallyAngryBird/Build/UnityLoader.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
       </Head>
@@ -49,7 +51,7 @@ export default function FabbleBird() {
           >
             <Box pt={6}>
               <Heading as="h2" size="lg" color="whiteAlpha.900">
-                Fabble Bird
+                Really Angry Bird
               </Heading>
               <Box background="blackAlpha.900+" mt={7}>
                 <div id="game"></div>
