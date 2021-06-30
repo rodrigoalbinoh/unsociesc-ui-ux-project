@@ -57,7 +57,7 @@ export default function ReallyAngryBird() {
                 <div id="game"></div>
               </Box>
             </Box>
-            <Ranking title="Ranking" gameCode="Game1" />
+            <Ranking title="Ranking" gameCode="Game2" />
           </Grid>
         </Box>
       </Container>
