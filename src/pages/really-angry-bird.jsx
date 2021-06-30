@@ -20,6 +20,13 @@ export default function ReallyAngryBird() {
     }, 5000);
   }, []);
 
+  useEffect(
+    () => () => {
+      delete window.unityInstance;
+    },
+    [],
+  );
+
   return (
     <Box background="gray.800" minHeight="100vh">
       <Head>
@@ -33,8 +40,6 @@ export default function ReallyAngryBird() {
         />
         <script src="games/ReallyAngryBird/TemplateData/UnityProgress.js"></script>
         <script src="games/ReallyAngryBird/Build/UnityLoader.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
       </Head>
       <Header isSingle />
       <Container minHeight="calc(100vh - 180px)" maxW="7xl" paddingTop="6">

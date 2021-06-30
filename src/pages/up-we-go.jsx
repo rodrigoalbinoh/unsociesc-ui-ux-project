@@ -20,6 +20,13 @@ export default function UpWeGo() {
     }, 5000);
   }, []);
 
+  useEffect(
+    () => () => {
+      delete window.unityInstance;
+    },
+    [],
+  );
+
   return (
     <Box background="gray.800" minHeight="100vh">
       <Head>
@@ -30,8 +37,6 @@ export default function UpWeGo() {
         <link rel="stylesheet" href="games/UpWeGo/TemplateData/style.css" />
         <script src="games/UpWeGo/TemplateData/UnityProgress.js"></script>
         <script src="games/UpWeGo/Build/UnityLoader.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
       </Head>
       <Header isSingle />
       <Container minHeight="calc(100vh - 180px)" maxW="7xl" paddingTop="6">

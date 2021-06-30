@@ -21,6 +21,13 @@ export default function FabbleBird() {
     }, 5000);
   }, []);
 
+  useEffect(
+    () => () => {
+      delete window.unityInstance;
+    },
+    [],
+  );
+
   return (
     <Box background="gray.800" minHeight="100vh">
       <Head>
@@ -31,8 +38,6 @@ export default function FabbleBird() {
         <link rel="stylesheet" href="games/FabbleBird/TemplateData/style.css" />
         <script src="games/FabbleBird/TemplateData/UnityProgress.js"></script>
         <script src="games/FabbleBird/Build/UnityLoader.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
       </Head>
       <Header isSingle />
       <Container minHeight="calc(100vh - 180px)" maxW="7xl" paddingTop="6">
