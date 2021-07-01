@@ -1,7 +1,7 @@
-import { Container, Flex, Box, Grid } from '@chakra-ui/react';
 import { ArrowBackIcon } from '@chakra-ui/icons';
-import NextLink from 'next/link';
+import { Container, Flex, Box, Grid } from '@chakra-ui/react';
 import Head from 'next/head';
+import NextLink from 'next/link';
 
 export function Header({ isSingle }) {
   return (

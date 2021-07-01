@@ -1,3 +1,5 @@
+import { FaGamepad } from 'react-icons/fa';
+
 import {
   Box,
   Button,
@@ -7,8 +9,6 @@ import {
   Center,
   Image,
 } from '@chakra-ui/react';
-// import Image from 'next/image';
-import { FaGamepad } from 'react-icons/fa';
 import Router from 'next/router';
 
 export function GameCard({ title, to, image }) {

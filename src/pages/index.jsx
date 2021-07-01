@@ -1,8 +1,9 @@
-import { Header } from '@components/Header';
-import { Footer } from '@components/Footer';
 import { Box, Container, Grid, Heading } from '@chakra-ui/react';
-import { Ranking } from '@components/Ranking';
+
+import { Footer } from '@components/Footer';
 import { GameCard } from '@components/GameCard';
+import { Header } from '@components/Header';
+import { Ranking } from '@components/Ranking';
 
 export default function Home() {
   return (

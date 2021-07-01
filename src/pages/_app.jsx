@@ -1,5 +1,6 @@
-import { ChakraProvider } from '@chakra-ui/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+
+import { ChakraProvider } from '@chakra-ui/react';
 import { DefaultSeo } from 'next-seo';
 
 const queryClient = new QueryClient();

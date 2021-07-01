@@ -1,11 +1,13 @@
-import Head from 'next/head';
-import { Header } from '@components/Header';
-import { Footer } from '@components/Footer';
-import { Box, Container, Grid, Heading } from '@chakra-ui/react';
-import { Ranking } from '@components/Ranking';
 import { useEffect } from 'react';
+
+import { Box, Container, Grid, Heading } from '@chakra-ui/react';
 import { firebaseConfig } from '@config/firebaseConfig';
 import { NextSeo } from 'next-seo';
+import Head from 'next/head';
+
+import { Footer } from '@components/Footer';
+import { Header } from '@components/Header';
+import { Ranking } from '@components/Ranking';
 
 export default function UpWeGo() {
   useEffect(() => {

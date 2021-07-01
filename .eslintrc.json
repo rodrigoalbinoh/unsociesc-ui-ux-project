@@ -18,7 +18,8 @@
   "plugins": [
       "react",
       "react-hooks",
-      "prettier"
+      "prettier",
+      "eslint-plugin-import-helpers"
   ],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
@@ -36,6 +37,26 @@
     "react/react-in-jsx-scope": "off",
     "prettier/prettier": "error",
     "no-unused-vars": "warn",
-    "jsx-a11y/anchor-is-valid": "off"
+    "jsx-a11y/anchor-is-valid": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+          "newlinesBetween": "always",
+          "groups": [
+              "/^react/",
+              "module",
+              "/^@components/",
+              "/^@lib/",
+              "/^@utils/",
+              "/^@services/",
+              "/^@hooks/",
+              "/^@context/",
+              "/^@styles/",
+              ["parent", "sibling", "index"]
+          ],
+          "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ]
+
   }
 }

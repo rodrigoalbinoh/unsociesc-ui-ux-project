@@ -1,3 +1,6 @@
+import { FaCrown, FaBatteryEmpty } from 'react-icons/fa';
+import { useQuery } from 'react-query';
+
 import {
   Table,
   Thead,
@@ -14,9 +17,8 @@ import {
   Text,
 } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
-import { useQuery } from 'react-query';
+
 import { api } from '@services/api';
-import { FaCrown, FaBatteryEmpty } from 'react-icons/fa';
 
 export function Ranking({ title, gameCode }) {
   const toast = useToast();
