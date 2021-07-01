@@ -3,14 +3,6 @@
 
 Projeto desenvolvido para a Avaliação A3 da Unidade Curricular Usabilidade, Desenvolvimento Web, Mobile e Jogos.
 
-## Deployment
-
-To deploy this project run
-
-```bash
-  npm run deploy
-```
-  
 ## Rodando localmente
 
 Clone o projeto
