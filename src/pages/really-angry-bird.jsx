@@ -5,6 +5,7 @@ import { Box, Container, Grid, Heading } from '@chakra-ui/react';
 import { Ranking } from '@components/Ranking';
 import { useEffect } from 'react';
 import { firebaseConfig } from '@config/firebaseConfig';
+import { NextSeo } from 'next-seo';
 
 export default function ReallyAngryBird() {
   useEffect(() => {
@@ -29,6 +30,7 @@ export default function ReallyAngryBird() {
 
   return (
     <Box background="gray.800" minHeight="100vh">
+      <NextSeo title="Really Angry Birds" />
       <Head>
         <link
           rel="shortcut icon"

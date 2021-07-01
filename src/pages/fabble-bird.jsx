@@ -5,6 +5,7 @@ import { Box, Container, Grid, Heading } from '@chakra-ui/react';
 import { Ranking } from '@components/Ranking';
 import { useEffect } from 'react';
 import { firebaseConfig } from '@config/firebaseConfig';
+import { NextSeo } from 'next-seo';
 
 export default function FabbleBird() {
   useEffect(() => {
@@ -30,6 +31,7 @@ export default function FabbleBird() {
 
   return (
     <Box background="gray.800" minHeight="100vh">
+      <NextSeo title="Fabble Bird" />
       <Head>
         <link
           rel="shortcut icon"

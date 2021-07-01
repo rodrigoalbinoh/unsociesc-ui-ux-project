@@ -5,6 +5,7 @@ import { Box, Container, Grid, Heading } from '@chakra-ui/react';
 import { Ranking } from '@components/Ranking';
 import { useEffect } from 'react';
 import { firebaseConfig } from '@config/firebaseConfig';
+import { NextSeo } from 'next-seo';
 
 export default function UpWeGo() {
   useEffect(() => {
@@ -29,6 +30,8 @@ export default function UpWeGo() {
 
   return (
     <Box background="gray.800" minHeight="100vh">
+      <NextSeo title="Up We Go" />
+
       <Head>
         <link
           rel="shortcut icon"

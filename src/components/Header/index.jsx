@@ -2,12 +2,10 @@ import { Container, Flex, Box, Grid } from '@chakra-ui/react';
 import { ArrowBackIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
 import Head from 'next/head';
-import { NextSeo } from 'next-seo';
 
 export function Header({ isSingle }) {
   return (
     <Container as="header" maxW="full" borderBottom="1px solid #3333">
-      <NextSeo title="A3 Jogos" />
       <Head>
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
@@ -47,7 +45,7 @@ export function Header({ isSingle }) {
                 lineHeight="tight"
                 isTruncated
               >
-                A3 Jogos
+                A3 Games
               </Box>
             </a>
           </NextLink>
